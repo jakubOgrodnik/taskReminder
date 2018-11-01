@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
+@Table(schema = "public")
 @Data
 public class Task {
 
