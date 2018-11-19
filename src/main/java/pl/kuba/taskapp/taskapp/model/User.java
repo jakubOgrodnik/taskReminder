@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -15,11 +15,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+    @Column(name = "user_name")
     @NotNull
-    private String userName;
+    private String username;
     @NotNull
     private String password;
     @NotNull
+    private String passwordConfirm;
+    @NotNull
     private String email;
-
+    @ManyToMany
+    @JoinColumn(name = "user_id")
+    private Set<Role> roles;
 }

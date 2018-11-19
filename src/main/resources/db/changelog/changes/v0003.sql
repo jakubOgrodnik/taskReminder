@@ -1,0 +1,1 @@
+alter table users add column password_confirm varchar (50);
